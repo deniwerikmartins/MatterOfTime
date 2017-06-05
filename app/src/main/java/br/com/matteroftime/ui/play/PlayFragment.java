@@ -166,6 +166,10 @@ public class PlayFragment extends Fragment implements PlayContract.View, OnMusic
                         repeticoesProximo.setText(String.valueOf(msg.arg2));
                         imgClick1.setVisibility(View.INVISIBLE);
                         imgClick2.setVisibility(View.INVISIBLE);
+                        ((DrawerLocker) getActivity()).setDrawerEnabled(true);
+                        ((MainActivity) getActivity()).habilitaViewPager();
+                        ((MainActivity) getActivity()).habilitaTabLayout();
+                        tocando = false;
                         break;
                     case 4:
                         repeticoesAtual.setText(String.valueOf(msg.arg1));
