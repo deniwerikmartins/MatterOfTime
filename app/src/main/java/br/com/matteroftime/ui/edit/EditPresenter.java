@@ -80,6 +80,7 @@ public class EditPresenter implements EditContract.Actions, OnDatabaseOperationC
     public void deleteMusic(Musica musica, Context context) {
         repository.deleteMusic(musica,this, context);
         loadMusics();
+
     }
 
     @Override
@@ -123,6 +124,7 @@ public class EditPresenter implements EditContract.Actions, OnDatabaseOperationC
     @Override
     public void onSQLOperationSucceded(String message) {
         view.showMessage(message);
+        loadMusics();
         bus.post(new MusicListChangedEvent());
     }
 }
